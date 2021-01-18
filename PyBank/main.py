@@ -72,6 +72,8 @@ min_change = min(value_change)
 min_pos = value_change.index(min_change)
 min_month = months[min_pos]
 
+
+#Print analysis to terminal:
 print("Financial Analysis")
 print("--------------------------")
 print(f"Total Months: {total_months}")
@@ -79,19 +81,22 @@ print(f"Total: ${net_total}")
 print(f"Average Change: ${average_change}")
 print(f"Greatest Increase in Profits: {max_month} (${max_change})")
 print(f"Greatest Decrease in Profits: {min_month} (${min_change})")
+
+
+#Open export path for text file:
+#tip o' the pin to this exchange: 
+# https://stackoverflow.com/questions/5214578/print-string-to-text-file
+output_path = os.path.join("Analysis", "PyBank_Analysis.txt")
+
+with open(output_path, "w") as text_file:
+
+    print("Financial Analysis", file = text_file)
+    print("--------------------------", file = text_file)
+    print(f"Total Months: {total_months}", file = text_file)
+    print(f"Total: ${net_total}", file = text_file)
+    print(f"Average Change: ${average_change}", file = text_file)
+    print(f"Greatest Increase in Profits: {max_month} (${max_change})", file = text_file)
+    print(f"Greatest Decrease in Profits: {min_month} (${min_change})", file = text_file)
        
-        #find the greatest increase in profits from variables above
-
-        #find the greatest decrease in profits from variables above
-
-#As an example, your analysis should look similar to the one below:
-
-#Financial Analysis
-#----------------------------
-#Total Months: 86
-#Total: $38382578
-#Average  Change: $-2315.12
-#Greatest Increase in Profits: Feb-2012 ($1926159)
-#Greatest Decrease in Profits: Sep-2013 ($-2196167)
-#In addition, your final script should both print the 
-# analysis to the terminal and export a text file with the results.
+#Here ends the program. It feels cludgy and unwieldy.
+# I'm not super happy about it, but it seems to work.       
