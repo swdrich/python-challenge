@@ -14,19 +14,25 @@ with open(csv_path) as csv_file:
     #Count the number of rows in the data set, minus the header
     header = next(budget_data)
     #print(header)
+    
+    #define starting variables
     row_count=0
+    net_total=0
+    
+    #begin the for loop
     for row in budget_data:
         #print(row)
         row_count = row_count + 1
-    print(f"Total Months: {row_count}")
-    
+        #print(row[1])
+   
+        #read value from row[1] and cast as int
+        monthly_net = int(row[1])
+        #add amounts
+        net_total = net_total + monthly_net
+   
 
-        
-        
-        
-        
-        
-        #Add all rows from Profit/Losses column 
+    print(f"Total Months: {row_count}")
+    print(f"Total: ${net_total}")
 
         #compare each month to the one before it,
         #calculate the difference, store as variable
