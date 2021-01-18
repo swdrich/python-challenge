@@ -40,7 +40,6 @@ with open(csv_path) as csv_file:
 total_months = len(months)
 
 #calculate monthly value change and store to new list
-
 value_change = []
 for num in values:
     previous_num = values[values.index(num)-1]
@@ -48,14 +47,22 @@ for num in values:
     #print(change_amount)
     value_change.append(int(change_amount))
 
+#remove first value and replace with 0
+#need to maintain same number of iterables as other lists
+value_change.pop(0)
+value_change.insert(0, int(0))
 #print(value_change)
 
-
+#calculate average change
+sum_of_value_change = sum(value_change)
+average_change = round(float(int(sum_of_value_change) / int(85)), 2)
+#print(average_change)
 
 print("Financial Analysis")
 print("--------------------------")
 print(f"Total Months: {total_months}")
 print(f"Total: ${net_total}")
+print(f"Average Change: ${average_change}")
 
         #compare each month to the one before it,
         #calculate the difference, store as variable
