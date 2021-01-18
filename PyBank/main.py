@@ -58,17 +58,28 @@ sum_of_value_change = sum(value_change)
 average_change = round(float(int(sum_of_value_change) / int(85)), 2)
 #print(average_change)
 
+#find greatest increase in profits
+max_change = max(value_change)
+#print(max_change)
+#find list position of max change
+max_pos = value_change.index(max_change)
+#print(max_pos)
+max_month = months[max_pos]
+#print(max_month)
+
+#find greatest decrease in profits
+min_change = min(value_change)
+min_pos = value_change.index(min_change)
+min_month = months[min_pos]
+
 print("Financial Analysis")
 print("--------------------------")
 print(f"Total Months: {total_months}")
 print(f"Total: ${net_total}")
 print(f"Average Change: ${average_change}")
-
-        #compare each month to the one before it,
-        #calculate the difference, store as variable
-
-        #find the average of the variables mentioned above
-
+print(f"Greatest Increase in Profits: {max_month} (${max_change})")
+print(f"Greatest Decrease in Profits: {min_month} (${min_change})")
+       
         #find the greatest increase in profits from variables above
 
         #find the greatest decrease in profits from variables above
