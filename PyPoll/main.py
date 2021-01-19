@@ -40,27 +40,25 @@ total_votes = len(voter_ID)
 #Get unique values from list and write to new list:
 #geeksforgeeks.org/python-get-unique-values-list/
 # function to get unique values 
+
+unique_candidates = []
 def unique(candidate_name): 
   
-    # intilize a null list 
-    unique_candidates = [] 
-      
     # traverse for all elements 
     for x in candidate_name: 
         # check if exists in unique_list or not 
         if x not in unique_candidates: 
             unique_candidates.append(x) 
     # print list 
-    for x in unique_candidates: 
-        print (x)
+    #for x in unique_candidates: 
+        #print (x)
+    return unique_candidates    
 
-unique_candidates = []
 unique(candidate_name)
 
-#assign variables to candidates and create dictionary:
-candidate_enum = enumerate(unique_candidates)
-print(candidate_enum)
+print(unique_candidates)
 
+ 
 
 #Print analysis to terminal:
 print("Election Results")
