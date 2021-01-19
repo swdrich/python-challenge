@@ -55,8 +55,11 @@ def unique(candidate_name):
     return unique_candidates    
 
 unique(candidate_name)
+#print(unique_candidates)
 
-print(unique_candidates)
+#create dictionary of candidates with enumerate
+candidate_dict = dict((i,j) for i,j in enumerate(unique_candidates, 1))
+print(candidate_dict)
 
  
 
