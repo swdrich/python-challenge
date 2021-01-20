@@ -81,6 +81,13 @@ def vote_count(unique_candidates):
 vote_count(unique_candidates)
 #print(candidate_votes)
 
+#find winner
+win_vote = max(candidate_votes)
+win_index = candidate_votes.index(win_vote)
+winner = unique_candidates[win_index]
+#print(winner)
+
+
 #calcualte vote percentage total
 candidate_vote_percent = []
 for x in (candidate_votes):
@@ -95,19 +102,19 @@ for x in (candidate_votes):
 #zip lists to make tuple
 candidate_tuple = tuple(zip(unique_candidates, candidate_vote_percent, candidate_votes))
 
-for lst in candidate_tuple:
-    print(f"{lst[0]}: {lst[1]}00% ({lst[2]})")
-
 #candidate_1 = list(candidate_tuple[0])
 #print(candidate_1)
 
+print(" ")
 print("Election Results")
 print("--------------------------")
 print(f"Total Votes: {total_votes}")
 print("--------------------------")
 for lst in candidate_tuple:
     print(f"{lst[0]}: {lst[1]}00% ({lst[2]})")
-
+print("--------------------------")
+print(f"Winner: {winner}")
+print("--------------------------")
 
 #Open export path for text file:
 #tip o' the pin to this exchange: 
@@ -122,9 +129,10 @@ with open(output_path, "w") as text_file:
     print("--------------------------", file = text_file)
     for lst in candidate_tuple:
         print(f"{lst[0]}: {lst[1]}00% ({lst[2]})", file=text_file)
-       
+    print("--------------------------", file = text_file)
+    print(f"Winner: {winner}", file = text_file)
+    print("--------------------------", file = text_file)       
 
-# The winner of the election based on popular vote.
 
 # As an example, your analysis should look similar to the one below:
 
