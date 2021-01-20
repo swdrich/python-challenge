@@ -41,17 +41,14 @@ total_months = len(months)
 
 #calculate monthly value change and store to new list
 value_change = []
-for num in values:
-    previous_num = values[values.index(num)-1]
+for i in range(1, len(values)):
+    num = values[i]
+    previous_num = values[i-1]
     change_amount = num - previous_num
     #print(change_amount)
     value_change.append(int(change_amount))
 
-#remove first value and replace with 0
-#need to maintain same number of iterables as other lists
-value_change.pop(0)
-value_change.insert(0, int(0))
-#print(value_change)
+print(value_change)
 
 #calculate average change
 sum_of_value_change = sum(value_change)
@@ -98,5 +95,4 @@ with open(output_path, "w") as text_file:
     print(f"Greatest Increase in Profits: {max_month} (${max_change})", file = text_file)
     print(f"Greatest Decrease in Profits: {min_month} (${min_change})", file = text_file)
        
-#Here ends the program. It feels cludgy and unwieldy.
-# I'm not super happy about it, but it seems to work.       
+      
