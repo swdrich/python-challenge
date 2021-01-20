@@ -42,6 +42,8 @@ total_votes = len(voter_ID)
 # function to get unique values 
 
 unique_candidates = []
+candidate_votes = []
+vote_total = 0
 def unique(candidate_name): 
   
     # traverse for all elements 
@@ -58,10 +60,30 @@ unique(candidate_name)
 #print(unique_candidates)
 
 #create dictionary of candidates with enumerate
-candidate_dict = dict((i,j) for i,j in enumerate(unique_candidates, 1))
-print(candidate_dict)
+#candidate_dict = dict((i,j) for i,j in enumerate(unique_candidates, 1))
+#print(candidate_dict)
 
- 
+#count votes per candidate and calculate percentage of total
+candidate_votes = []
+def vote_count(unique_candidates):
+
+    vote_total = 0
+
+    for name in unique_candidates:
+        for vote in candidate_name:
+            if name == vote:
+                vote_total = int(vote_total) + 1
+        candidate_votes.append(vote_total)
+        print(candidate_votes)
+
+vote_count(unique_candidates)
+
+    #take each name in unique_candidates
+    #count number in candidate_name
+    #return dictionary of k,v as name, votes
+
+
+
 
 #Print analysis to terminal:
 print("Election Results")
