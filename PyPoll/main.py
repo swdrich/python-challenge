@@ -47,45 +47,49 @@ vote_total = 0
 def unique(candidate_name): 
   
     # traverse for all elements 
-    for x in candidate_name: 
+    for name in candidate_name: 
         # check if exists in unique_list or not 
-        if x not in unique_candidates: 
-            unique_candidates.append(x) 
+        if name not in unique_candidates: 
+            unique_candidates.append(name) 
     # print list 
-    #for x in unique_candidates: 
-        #print (x)
+    #for name in unique_candidates: 
+        #print (name)
     return unique_candidates    
 
 unique(candidate_name)
 #print(unique_candidates)
 
-#create dictionary of candidates with enumerate
-#candidate_dict = dict((i,j) for i,j in enumerate(unique_candidates, 1))
-#print(candidate_dict)
-
-#count votes per candidate and calculate percentage of total
+#count votes per candidate 
 candidate_votes = []
 def vote_count(unique_candidates):
-
+    #set initial counter
     vote_total = 0
-
+    #traverse first list
     for name in unique_candidates:
+        #compare to second list
         for vote in candidate_name:
+            #add votes
             if name == vote:
                 vote_total = int(vote_total) + 1
+        #add to list
         candidate_votes.append(vote_total)
-        print(candidate_votes)
+        #print(candidate_votes)
+        #reset counter
+        vote_total = 0
+    return candidate_votes
 
 vote_count(unique_candidates)
+#print(candidate_votes)
 
-    #take each name in unique_candidates
-    #count number in candidate_name
-    #return dictionary of k,v as name, votes
+#calcualte vote percentage total
+candidate_vote_percent = []
+for x in (candidate_votes):
+    vote_percent = round((float(int(x) / int(total_votes)) * 100), 3)
+    candidate_vote_percent.append(vote_percent)
+print(candidate_vote_percent)
 
 
 
-
-#Print analysis to terminal:
 print("Election Results")
 print("--------------------------")
 print(f"Total Votes: {total_votes}")
