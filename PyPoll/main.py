@@ -86,18 +86,27 @@ candidate_vote_percent = []
 for x in (candidate_votes):
     vote_percent = round((float(int(x) / int(total_votes)) * 100), 3)
     candidate_vote_percent.append(vote_percent)
-print(candidate_vote_percent)
+#print(candidate_vote_percent)
 
+#print(unique_candidates)
+#print(candidate_vote_percent)
+#print(candidate_votes)
 
+#zip lists to make tuple
+candidate_tuple = tuple(zip(unique_candidates, candidate_vote_percent, candidate_votes))
+
+for lst in candidate_tuple:
+    print(f"{lst[0]}: {lst[1]}00% ({lst[2]})")
+
+#candidate_1 = list(candidate_tuple[0])
+#print(candidate_1)
 
 print("Election Results")
 print("--------------------------")
 print(f"Total Votes: {total_votes}")
 print("--------------------------")
-#print(f"Total: ${net_total}")
-#print(f"Average Change: ${average_change}")
-#print(f"Greatest Increase in Profits: {max_month} (${max_change})")
-#print(f"Greatest Decrease in Profits: {min_month} (${min_change})")
+for lst in candidate_tuple:
+    print(f"{lst[0]}: {lst[1]}00% ({lst[2]})")
 
 
 #Open export path for text file:
@@ -111,17 +120,9 @@ with open(output_path, "w") as text_file:
     print("--------------------------", file = text_file)
     print(f"Total Votes: {total_votes}", file = text_file)
     print("--------------------------", file = text_file)
-    #print(f"Total: ${net_total}", file = text_file)
-    #print(f"Average Change: ${average_change}", file = text_file)
-    #print(f"Greatest Increase in Profits: {max_month} (${max_change})", file = text_file)
-    #print(f"Greatest Decrease in Profits: {min_month} (${min_change})", file = text_file)
+    for lst in candidate_tuple:
+        print(f"{lst[0]}: {lst[1]}00% ({lst[2]})", file=text_file)
        
-
-# A complete list of candidates who received votes
-
-# The percentage of votes each candidate won
-
-# The total number of votes each candidate won
 
 # The winner of the election based on popular vote.
 
