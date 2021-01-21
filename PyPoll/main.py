@@ -3,7 +3,7 @@ import os
 import csv
 
 #Don't panic, something is happening.
-print("Calcualting...")
+print("Calculating...")
 
 #Establish file path
 csv_path = os.path.join("Resources","election_data.csv")
@@ -20,21 +20,21 @@ with open(csv_path) as csv_file:
     #print(header)
 
     #define values
-    voter_ID = []
-    county = []
+    #voter_ID = []
+    #county = []
     candidate_name = []
 
     #begin for loop
     for row in election_data:
 
         #add data to lists
-        voter_ID.append(str(row[0]))
-        county.append(str(row[1]))
+        #voter_ID.append(str(row[0]))
+        #county.append(str(row[1]))
         candidate_name.append(str(row[2]))
     #print(voter_ID)
 
 # Calcualte the total number of votes cast
-total_votes = len(voter_ID)
+total_votes = len(candidate_name)
 #print(total_votes)
 
 #Get unique values from list and write to new list:
@@ -134,18 +134,3 @@ with open(output_path, "w") as text_file:
     print("--------------------------", file = text_file)       
 
 
-# As an example, your analysis should look similar to the one below:
-
-# Election Results
-# -------------------------
-# Total Votes: 3521001
-# -------------------------
-# Khan: 63.000% (2218231)
-# Correy: 20.000% (704200)
-# Li: 14.000% (492940)
-# O'Tooley: 3.000% (105630)
-# -------------------------
-# Winner: Khan
-# -------------------------
-# In addition, your final script should both print the 
-# analysis to the terminal and export a text file with the results.

@@ -40,6 +40,7 @@ with open(csv_path) as csv_file:
 total_months = len(months)
 
 #calculate monthly value change and store to new list
+#A big thanks to TA Benji for helping me fix this section!
 value_change = []
 for i in range(1, len(values)):
     num = values[i]
